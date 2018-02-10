@@ -168,7 +168,7 @@ class ViewController: UIViewController {
         self.historyLabel.text = "\(self.history.count)戰 \(winHistory.count)勝\(loseHistory.count)輸\(deuceHistory.count)平手"
         
         // !!
-        if self.history.count > 60 {
+        if self.history.count > 30 {
             var img: UIImage?
             
             self.actionButtons.first?.setTitle("", for: UIControlState.normal)
@@ -178,6 +178,10 @@ class ViewController: UIViewController {
             self.actionButtons[1].setTitle("", for: UIControlState.normal)
             img = UIImage.init(named: "\(GameAction.scissors)")
             self.actionButtons[1].setBackgroundImage(img, for: UIControlState.normal)
+            
+            self.actionButtons[2].setTitle("", for: UIControlState.normal)
+            img = UIImage.init(named: "\(GameAction.paper)")
+            self.actionButtons[2].setBackgroundImage(img, for: UIControlState.normal)
         }
     }
     
